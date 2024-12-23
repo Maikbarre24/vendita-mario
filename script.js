@@ -49,11 +49,7 @@ function checkout() {
   updateCart();
 }let carrello = JSON.parse(localStorage.getItem('carrello')) || [];
 
-function aggiungiAlCarrello(nome, prezzo) {
-  carrello.push({ nome, prezzo });
-  localStorage.setItem('carrello', JSON.stringify(carrello));
-  aggiornaCarrelloUI();
-  alert(`${nome} è stato aggiunto al carrello.`);
-}
+<!-- Lightbox JS -->
+<script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/js/lightbox.min.js"></script>
 
 
