@@ -47,4 +47,13 @@ function checkout() {
   alert(`Grazie per il tuo acquisto! Totale: €${total.toFixed(2)}`);
   cart = []; // Svuota il carrello dopo il pagamento
   updateCart();
+}let carrello = JSON.parse(localStorage.getItem('carrello')) || [];
+
+function aggiungiAlCarrello(nome, prezzo) {
+  carrello.push({ nome, prezzo });
+  localStorage.setItem('carrello', JSON.stringify(carrello));
+  aggiornaCarrelloUI();
+  alert(`${nome} è stato aggiunto al carrello.`);
 }
+
+
