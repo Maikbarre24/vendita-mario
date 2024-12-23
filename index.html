@@ -51,6 +51,29 @@
           <button type="submit">Paga con PayPal</button>
         </form>
       </div>
+      <!-- Sezione per selezionare il metodo di pagamento -->
+    <div class="buttons-container">      
+      <button onclick="showCardPayment()">Paga con Carta di Credito</button>
+    </div>
+    <!-- Contenitore per PayPal e pagamento con carta -->
+    <div id="paypal-button-container" style="display: none;"></div>
+    <div id="card-payment-container" style="display: none;">
+      <p>Inserisci i dettagli della tua carta di credito</p>
+      <!-- Puoi aggiungere un modulo di pagamento con carta, come Stripe o altri sistemi -->
+      <form action="process_payment.php" method="POST">
+        <label for="cardNumber">Numero Carta</label>
+        <input type="text" id="cardNumber" name="cardNumber" required /><br/><br/>
+
+        <label for="expiryDate">Data di scadenza</label>
+        <input type="text" id="expiryDate" name="expiryDate" required /><br/><br/>
+
+        <label for="cvc">CVC</label>
+        <input type="text" id="cvc" name="cvc" required /><br/><br/>
+
+        <button type="submit">Paga con Carta</button>
+      </form>
+    </div>
+  </div>
 
       <!-- Disegno 2 -->
       <div class="artwork">
