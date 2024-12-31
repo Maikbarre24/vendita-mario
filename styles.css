@@ -73,22 +73,6 @@ h1, h2 {
     border-radius: 8px;
     border: 2px solid #ddd;
 }
-/* Stile per la griglia di immagini */
-.category-images {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 colonne di uguale larghezza */
-    gap: 20px; /* Spazio tra le immagini */
-    justify-items: center; /* Centra le immagini in ogni cella */
-    margin-top: 20px; /* Spazio sopra la griglia */
-}
-
-.category-images img {
-    width: 100%; /* Le immagini prenderanno il 100% della larghezza della cella */
-    max-width: 250px; /* Larghezza massima per ogni immagine */
-    height: auto; /* Mantiene il rapporto di aspetto */
-    border-radius: 8px; /* Bordo arrotondato per le immagini */
-    border: 2px solid #ddd; /* Bordo sottile */
-}
 
 
 #home {
@@ -209,6 +193,22 @@ footer p {
 #cart button:hover {
     background-color: #0056b3;
 }
+/* Stile per la griglia di immagini */
+.category-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonne di uguale larghezza */
+    gap: 20px; /* Spazio tra le immagini */
+    justify-items: center; /* Centra le immagini in ogni cella */
+    margin-top: 20px; /* Spazio sopra la griglia */
+}
+
+.category-images img {
+    width: 100%; /* Le immagini prenderanno il 100% della larghezza della cella */
+    max-width: 250px; /* Larghezza massima per ogni immagine */
+    height: auto; /* Mantiene il rapporto di aspetto */
+    border-radius: 8px; /* Bordo arrotondato per le immagini */
+    border: 2px solid #ddd; /* Bordo sottile */
+}
 .anime-category {
     text-align: center; /* Allinea il contenuto al centro */
     padding: 20px;
@@ -310,33 +310,4 @@ footer p {
     margin-bottom: 15px; /* Spazio tra l'immagine e il titolo */
     border-radius: 10px; /* Angoli arrotondati */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-/* Media query per tablet */
-@media (max-width: 768px) {
-    .categories {
-        grid-template-columns: repeat(2, 1fr); /* 2 colonne su tablet */
-    }
-
-    .category img {
-        max-width: 120px;
-    }
-}
-
-/* Media query per smartphone */
-@media (max-width: 480px) {
-    .categories {
-        grid-template-columns: 1fr; /* 1 colonna su telefoni */
-    }
-
-    .category img {
-        max-width: 100px;
-    }
-
-    .category h2 {
-        font-size: 1rem;
-    }
-
-    .category p {
-        font-size: 0.9rem;
-    }
 }
