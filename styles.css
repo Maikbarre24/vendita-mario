@@ -22,6 +22,7 @@ header nav a {
 header nav a:hover {
     text-decoration: underline;
 }
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -73,7 +74,6 @@ h1, h2 {
     border-radius: 8px;
     border: 2px solid #ddd;
 }
-
 
 #home {
     text-align: center;
@@ -193,7 +193,7 @@ footer p {
 #cart button:hover {
     background-color: #0056b3;
 }
-/* Stile per la griglia di immagini */
+
 .category-images {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 colonne di uguale larghezza */
@@ -209,20 +209,19 @@ footer p {
     border-radius: 8px; /* Bordo arrotondato per le immagini */
     border: 2px solid #ddd; /* Bordo sottile */
 }
+
 .anime-category {
     text-align: center; /* Allinea il contenuto al centro */
     padding: 20px;
     margin-top: 40px;
 }
 
-/* Titolo della categoria */
 .anime-category h2 {
     font-size: 2.5em;
     margin-bottom: 30px; /* Aggiungi un po' di spazio tra il titolo e il video */
     color: #333;
 }
 
-/* Video orizzontale centrato con una larghezza massima */
 .horizontal-video {
     object-fit: cover;
     border-radius: 8px;
@@ -232,7 +231,6 @@ footer p {
     margin: 0 auto; /* Centra il video orizzontalmente */
 }
 
-/* Testo descrittivo */
 .video-description {
     font-size: 1.2em;
     margin-top: 30px; /* Distanza tra il video e la descrizione */
@@ -244,7 +242,7 @@ footer p {
     text-align: justify;
     padding: 0 10px;
 }
-/* Stile per la pagina della Galleria */
+
 .categories {
     display: flex;
     justify-content: center;
@@ -280,7 +278,6 @@ footer p {
     color: #666;
 }
 
-/* Griglia di immagini */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -302,7 +299,7 @@ footer p {
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
-/* Stile per i disegni delle categorie */
+
 .category img {
     width: 100%;
     max-width: 200px; /* Dimensione massima dei disegni */
@@ -310,4 +307,15 @@ footer p {
     margin-bottom: 15px; /* Spazio tra l'immagine e il titolo */
     border-radius: 10px; /* Angoli arrotondati */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.line-with-drawing {
+    background-image: url('path/to/your-drawing.png'); /* Sostituisci con il percorso dell'immagine */
+    background-repeat: no-repeat;
+    background-position: left center; /* Posizione del disegno */
+    background-size: 50px auto; /* Dimensione del disegno */
+    padding-left: 70px; /* Spazio per evitare sovrapposizione con il testo */
+    margin-bottom: 10px; /* Distanza tra le righe */
+    display: flex;
+    align-items: center; /* Allinea verticalmente il contenuto */
 }
