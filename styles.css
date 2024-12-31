@@ -62,7 +62,8 @@ h1, h2 {
     text-align: center;
 }
 
-.category-images {
+.category-images,
+.gallery-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 colonne di default */
     gap: 20px; /* Spazio tra le immagini */
@@ -70,7 +71,8 @@ h1, h2 {
     margin-top: 20px;
 }
 
-.category-images img {
+.category-images img,
+.gallery-grid img {
     width: 100%;
     max-width: 250px;
     border-radius: 8px;
@@ -79,7 +81,8 @@ h1, h2 {
 
 /* Media query per dispositivi mobili */
 @media (max-width: 768px) {
-    .category-images {
+    .category-images,
+    .gallery-grid {
         grid-template-columns: repeat(1, 1fr); /* 1 colonna su schermi piccoli */
     }
 }
