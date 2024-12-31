@@ -63,16 +63,25 @@ h1, h2 {
 }
 
 .category-images {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonne di default */
+    gap: 20px; /* Spazio tra le immagini */
+    justify-items: center; /* Centra le immagini */
+    margin-top: 20px;
 }
 
 .category-images img {
-    width: 200px;
-    height: auto;
+    width: 100%;
+    max-width: 250px;
     border-radius: 8px;
     border: 2px solid #ddd;
+}
+
+/* Media query per dispositivi mobili */
+@media (max-width: 768px) {
+    .category-images {
+        grid-template-columns: repeat(1, 1fr); /* 1 colonna su schermi piccoli */
+    }
 }
 
 #home {
