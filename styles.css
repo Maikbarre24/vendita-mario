@@ -62,13 +62,12 @@ h1, h2 {
     text-align: center;
 }
 
-.category-images,
-.gallery-grid {
+.category-images {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 colonne di default */
+    grid-template-columns: 1fr; /* Una colonna per riga */
     gap: 20px; /* Spazio tra le immagini */
-    justify-items: center; /* Centra le immagini */
-    margin-top: 20px;
+    justify-items: center; /* Centra le immagini orizzontalmente */
+    margin-top: 20px; /* Spazio sopra la griglia */
 }
 
 .category-images img,
