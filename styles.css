@@ -193,22 +193,53 @@ footer p {
 #cart button:hover {
     background-color: #0056b3;
 }
-/* Stile per la griglia di immagini */
-.category-images {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 colonne di uguale larghezza */
-    gap: 20px; /* Spazio tra le immagini */
-    justify-items: center; /* Centra le immagini in ogni cella */
-    margin-top: 20px; /* Spazio sopra la griglia */
+/* Stile generale per le categorie */
+.category {
+    text-align: center;
+    margin: 20px auto;
 }
 
-.category-images img {
-    width: 100%; /* Le immagini prenderanno il 100% della larghezza della cella */
-    max-width: 250px; /* Larghezza massima per ogni immagine */
-    height: auto; /* Mantiene il rapporto di aspetto */
-    border-radius: 8px; /* Bordo arrotondato per le immagini */
-    border: 2px solid #ddd; /* Bordo sottile */
+/* Adattamento delle immagini delle categorie */
+.category img {
+    width: 100%;
+    max-width: 150px; /* Riduce la dimensione massima per dispositivi piccoli */
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 8px;
 }
+
+/* Media query per schermi piccoli */
+@media (max-width: 768px) {
+    .categories {
+        display: flex;
+        flex-direction: column; /* Dispone le categorie in una colonna verticale */
+        align-items: center;
+    }
+
+    .category {
+        margin: 15px 0; /* Spazio tra le categorie */
+    }
+
+    .category img {
+        max-width: 120px; /* Ridimensiona ulteriormente le immagini per schermi molto piccoli */
+    }
+}
+
+/* Media query per schermi molto piccoli (es. telefoni) */
+@media (max-width: 480px) {
+    .category img {
+        max-width: 100px; /* Dimensioni più piccole per schermi molto stretti */
+    }
+
+    .category h2 {
+        font-size: 1.2em; /* Riduce la dimensione del titolo */
+    }
+
+    .category p {
+        font-size: 0.9em; /* Riduce il testo descrittivo */
+    }
+}
+
 .anime-category {
     text-align: center; /* Allinea il contenuto al centro */
     padding: 20px;
