@@ -311,3 +311,32 @@ footer p {
     border-radius: 10px; /* Angoli arrotondati */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+/* Media query per tablet */
+@media (max-width: 768px) {
+    .categories {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonne su tablet */
+    }
+
+    .category img {
+        max-width: 120px;
+    }
+}
+
+/* Media query per smartphone */
+@media (max-width: 480px) {
+    .categories {
+        grid-template-columns: 1fr; /* 1 colonna su telefoni */
+    }
+
+    .category img {
+        max-width: 100px;
+    }
+
+    .category h2 {
+        font-size: 1rem;
+    }
+
+    .category p {
+        font-size: 0.9rem;
+    }
+}
