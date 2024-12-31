@@ -73,6 +73,22 @@ h1, h2 {
     border-radius: 8px;
     border: 2px solid #ddd;
 }
+/* Stile per la griglia di immagini */
+.category-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonne di uguale larghezza */
+    gap: 20px; /* Spazio tra le immagini */
+    justify-items: center; /* Centra le immagini in ogni cella */
+    margin-top: 20px; /* Spazio sopra la griglia */
+}
+
+.category-images img {
+    width: 100%; /* Le immagini prenderanno il 100% della larghezza della cella */
+    max-width: 250px; /* Larghezza massima per ogni immagine */
+    height: auto; /* Mantiene il rapporto di aspetto */
+    border-radius: 8px; /* Bordo arrotondato per le immagini */
+    border: 2px solid #ddd; /* Bordo sottile */
+}
 
 
 #home {
