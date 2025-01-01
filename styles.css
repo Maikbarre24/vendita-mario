@@ -326,8 +326,15 @@ footer p {
 /* Dimensioni specifiche per i disegni nella pagina Comisioni */
 .comisioni img {
     width: 100%; /* Riempie lo spazio disponibile */
-    max-width: 200px; /* Dimensione massima (puoi modificarla) */
+    max-width: 250px; /* Dimensione massima (puoi modificarla) */
     height: auto; /* Mantiene le proporzioni */
     border-radius: 8px; /* Optional: Angoli arrotondati */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Effetto ombra */
+}
+.comisioni {
+    display: flex; /* Allinea gli elementi orizzontalmente */
+    flex-wrap: wrap; /* Permette agli elementi di andare a capo */
+    gap: 20px; /* Spazio tra le immagini */
+    justify-content: center; /* Centra le immagini orizzontalmente */
+    padding: 20px; /* Spaziatura interna */
 }
