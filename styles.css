@@ -79,7 +79,7 @@ h1, h2 {
 }
 
 /* Media query per dispositivi mobili */
-@media (max-width: 768px) {
+@media (max-width: 750px) {
     .category-images,
     .gallery-grid {
         grid-template-columns: repeat(1, 1fr); /* 1 colonna su schermi piccoli */
