@@ -86,7 +86,6 @@ const deliverySelect = document.getElementById("delivery");
 const addressSection = document.getElementById("addressSection");
 
 deliverySelect.addEventListener("change", () => {
-    // Aggiungi o rimuovi la classe "hidden" in base alla selezione del metodo di consegna
     if (deliverySelect.value === "spedizione") {
         addressSection.classList.remove("hidden");
     } else {
@@ -114,14 +113,15 @@ purchaseForm.addEventListener("submit", function (e) {
 
     console.log("Dati inviati:", data);
 
-    // Creazione del messaggio per WhatsApp
-    const message = Nuovo acquisto:\nNome: ${data.name}\nEmail: ${data.email}\nTelefono: ${data.phone}\nMetodo di spedizione: ${data.delivery}\nIndirizzo: ${data.address}\nCAP: ${data.postalCode}\nMetodo di pagamento: ${data.paymentMethod};
+    // Creazione del corpo dell'email
+    const subject = "Nuovo Acquisto";
+    const body = Nuovo acquisto:\nNome: ${data.name}\nEmail: ${data.email}\nTelefono: ${data.phone}\nMetodo di spedizione: ${data.delivery}\nIndirizzo: ${data.address}\nCAP: ${data.postalCode}\nMetodo di pagamento: ${data.paymentMethod};
 
-    // Sostituisci 'numeroTelefono' con il tuo numero di telefono WhatsApp, incluso il prefisso internazionale (es. +39 per l'Italia)
-    const whatsappLink = https://wa.me/+393511054672?text=${encodeURIComponent(message)};
+    // Creazione del link mailto
+    const mailtoLink = mailto:maikbarre3000@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)};
 
-    // Reindirizza a WhatsApp
-    window.open(whatsappLink, "_blank");
+    // Reindirizza al client di posta elettronica
+    window.location.href = mailtoLink;
 
     // Mostra un messaggio di conferma
     alert("Modulo inviato con successo! Grazie per il tuo acquisto.");
