@@ -1,95 +1,30 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modulo Acquisto</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
+<form action="process_order.php" method="POST">
+    <label for="name">Nome:</label>
+    <input type="text" id="name" name="name" required><br>
 
-        .form-container {
-            background: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            width: 100%;
-        }
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br>
 
-        .form-container h1 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #333333;
-        }
+    <label for="phone">Telefono:</label>
+    <input type="text" id="phone" name="phone" required><br>
 
-        .form-container input, .form-container button {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-            font-size: 16px;
-        }
+    <label for="delivery_method">Metodo di Consegna:</label>
+    <input type="radio" id="pickup" name="delivery_method" value="A mano" required>
+    <label for="pickup">A mano</label>
+    <input type="radio" id="shipping" name="delivery_method" value="Spedizione">
+    <label for="shipping">Spedizione</label><br>
 
-        .form-container button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
+    <label for="address">Indirizzo:</label>
+    <input type="text" id="address" name="address" required><br>
 
-        .form-container button:hover {
-            background-color: #45a049;
-        }
-    </style>
-</head>
-<body>
-    <div class="form-container">
-        <h1>Modulo Acquisto</h1>
-        <form id="purchaseForm">
-            <input type="text" name="name" placeholder="Nome Completo" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="tel" name="phone" placeholder="Telefono" required>
-            <input type="text" name="delivery" placeholder="Metodo di Consegna" required>
-            <input type="text" name="address" placeholder="Indirizzo">
-            <input type="text" name="postalCode" placeholder="CAP">
-            <input type="text" name="paymentMethod" placeholder="Metodo di Pagamento" required>
-            <button type="submit">Invia</button>
-        </form>
-    </div>
+    <label for="zip">CAP:</label>
+    <input type="text" id="zip" name="zip" required><br>
 
-    <script>
-        const form = document.getElementById('purchaseForm');
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
+    <label for="payment_method">Metodo di Pagamento:</label>
+    <input type="radio" id="cash" name="payment_method" value="Contanti" required>
+    <label for="cash">Contanti</label>
+    <input type="radio" id="paypal" name="payment_method" value="PayPal">
+    <label for="paypal">PayPal</label><br>
 
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData.entries());
-
-            try {
-                const response = await fetch('https://script.google.com/macros/s/AKfycbxWKcUlS7pFQmMgS3PDtymxh-IQMZctSX0McDCxg6Z3HhVWad8lCUtMS0_Ts_XM445yWw/exec', { // Sostituisci con il link del tuo Web App
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(data),
-                });
-
-                const result = await response.json();
-                alert(result.success ? 'Ordine inviato con successo!' : 'Errore durante l\'invio.');
-            } catch (error) {
-                console.error('Errore:', error);
-                alert('Errore durante l\'invio. Controlla la connessione.');
-            }
-        });
-    </script>
-</body>
-</html>
+    <button type="submit">Invia Ordine</button>
+</form>
