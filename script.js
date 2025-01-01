@@ -81,63 +81,61 @@ accordions.forEach(accordion => {
   });
 });
 
-<script>
-    // Inizializzazione EmailJS con il tuo user ID
-    (function(){
-        emailjs.init("g_kFikFUMA1_4kAVW");  // Sostituisci con il tuo user ID da EmailJS
-    })();
+// Inizializzazione EmailJS con il tuo user ID
+(function(){
+    emailjs.init("g_kFikFUMA1_4kAVW");  // Sostituisci con il tuo user ID da EmailJS
+})();
 
-    // Gestione della sezione indirizzo
-    const deliverySelect = document.getElementById("delivery");
-    const addressSection = document.getElementById("addressSection");
+// Gestione della sezione indirizzo
+const deliverySelect = document.getElementById("delivery");
+const addressSection = document.getElementById("addressSection");
 
-    deliverySelect.addEventListener("change", () => {
-        if (deliverySelect.value === "spedizione") {
-            addressSection.classList.remove("hidden");
-        } else {
-            addressSection.classList.add("hidden");
-        }
-    });
+deliverySelect.addEventListener("change", () => {
+    if (deliverySelect.value === "spedizione") {
+        addressSection.classList.remove("hidden");
+    } else {
+        addressSection.classList.add("hidden");
+    }
+});
 
-    // Gestione dell'invio del modulo
-    const purchaseForm = document.getElementById("purchaseForm");
+// Gestione dell'invio del modulo
+const purchaseForm = document.getElementById("purchaseForm");
 
-    purchaseForm.addEventListener("submit", function(e) {
-        e.preventDefault(); // Impedisce l'invio normale del modulo
+purchaseForm.addEventListener("submit", function(e) {
+    e.preventDefault(); // Impedisce l'invio normale del modulo
 
-        // Recupero dei dati del modulo
-        const formData = new FormData(purchaseForm);
-        const data = {
-            name: formData.get("name"),
-            email: formData.get("email"),
-            phone: formData.get("phone"),
-            delivery: formData.get("delivery"),
-            address: formData.get("address") || "N/A", // Se l'indirizzo non è compilato, usa "N/A"
-            postalCode: formData.get("postalCode") || "N/A", // Se il CAP non è compilato, usa "N/A"
-            paymentMethod: formData.get("paymentMethod"),
-        };
+    // Recupero dei dati del modulo
+    const formData = new FormData(purchaseForm);
+    const data = {
+        name: formData.get("name"),
+        email: formData.get("email"),
+        phone: formData.get("phone"),
+        delivery: formData.get("delivery"),
+        address: formData.get("address") || "N/A", // Se l'indirizzo non è compilato, usa "N/A"
+        postalCode: formData.get("postalCode") || "N/A", // Se il CAP non è compilato, usa "N/A"
+        paymentMethod: formData.get("paymentMethod"),
+    };
 
-        console.log("Dati inviati:", data);
+    console.log("Dati inviati:", data);
 
-        // Creazione del corpo dell'email
-        const subject = "Nuovo Acquisto";
-        const body = Nuovo acquisto:\nNome: ${data.name}\nEmail: ${data.email}\nTelefono: ${data.phone}\nMetodo di spedizione: ${data.delivery}\nIndirizzo: ${data.address}\nCAP: ${data.postalCode}\nMetodo di pagamento: ${data.paymentMethod};
+    // Creazione del corpo dell'email
+    const subject = "Nuovo Acquisto";
+    const body = Nuovo acquisto:\nNome: ${data.name}\nEmail: ${data.email}\nTelefono: ${data.phone}\nMetodo di spedizione: ${data.delivery}\nIndirizzo: ${data.address}\nCAP: ${data.postalCode}\nMetodo di pagamento: ${data.paymentMethod};
 
-        // Creazione dell'oggetto da inviare tramite EmailJS
-        const emailParams = {
-            to_email: "maicolbarreto896@gmail.com",  // Sostituisci con il tuo indirizzo email
-            subject: subject,
-            body: body
-        };
+    // Creazione dell'oggetto da inviare tramite EmailJS
+    const emailParams = {
+        to_email: "maicolbarreto896@gmail.com",  // Sostituisci con il tuo indirizzo email
+        subject: subject,
+        body: body
+    };
 
-        // Invia l'email tramite EmailJS
-        emailjs.send("service_2yae16e", "template_paqddwm", emailParams)
-            .then(function(response) {
-                console.log("Successo:", response);
-                alert("Modulo inviato con successo! Grazie per il tuo acquisto.");
-            }, function(error) {
-                console.log("Errore:", error);
-                alert("Si è verificato un errore nell'invio dell'email.");
-            });
-    });
-</script>
+    // Invia l'email tramite EmailJS
+    emailjs.send("service_2yae16e", "template_paqddwm", emailParams)
+        .then(function(response) {
+            console.log("Successo:", response);
+            alert("Modulo inviato con successo! Grazie per il tuo acquisto.");
+        }, function(error) {
+            console.log("Errore:", error);
+            alert("Si è verificato un errore nell'invio dell'email.");
+        });
+});
