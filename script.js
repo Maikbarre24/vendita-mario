@@ -83,7 +83,7 @@ accordions.forEach(accordion => {
 
 // Inizializzazione EmailJS con il tuo user ID
 (function(){
-    emailjs.init("g_kFikFUMA1_4kAVW");  // Sostituisci con il tuo user ID da EmailJS
+    emailjs.init("Michael");  // Sostituisci con il tuo user ID da EmailJS
 })();
 
 // Gestione della sezione indirizzo
