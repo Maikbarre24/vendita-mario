@@ -80,3 +80,49 @@ accordions.forEach(accordion => {
     }
   });
 });
+
+// Gestione della sezione indirizzo
+const deliverySelect = document.getElementById("delivery");
+const addressSection = document.getElementById("addressSection");
+
+deliverySelect.addEventListener("change", () => {
+    // Aggiungi o rimuovi la classe "hidden" in base alla selezione del metodo di consegna
+    if (deliverySelect.value === "spedizione") {
+        addressSection.classList.remove("hidden");
+    } else {
+        addressSection.classList.add("hidden");
+    }
+});
+
+// Gestione dell'invio del modulo
+const purchaseForm = document.getElementById("purchaseForm");
+
+purchaseForm.addEventListener("submit", function (e) {
+    e.preventDefault(); // Impedisce il comportamento predefinito del modulo
+
+    // Recupero dei dati del modulo
+    const formData = new FormData(purchaseForm);
+    const data = {
+        name: formData.get("name"),
+        email: formData.get("email"),
+        phone: formData.get("phone"),
+        delivery: formData.get("delivery"),
+        address: formData.get("address") || "N/A", // Se l'indirizzo non è compilato, usa "N/A"
+        postalCode: formData.get("postalCode") || "N/A", // Se il CAP non è compilato, usa "N/A"
+        paymentMethod: formData.get("paymentMethod"),
+    };
+
+    console.log("Dati inviati:", data);
+
+    // Creazione del messaggio per WhatsApp
+    const message = Nuovo acquisto:\nNome: ${data.name}\nEmail: ${data.email}\nTelefono: ${data.phone}\nMetodo di spedizione: ${data.delivery}\nIndirizzo: ${data.address}\nCAP: ${data.postalCode}\nMetodo di pagamento: ${data.paymentMethod};
+
+    // Sostituisci 'numeroTelefono' con il tuo numero di telefono WhatsApp, incluso il prefisso internazionale (es. +39 per l'Italia)
+    const whatsappLink = https://wa.me/+393511054672?text=${encodeURIComponent(message)};
+
+    // Reindirizza a WhatsApp
+    window.open(whatsappLink, "_blank");
+
+    // Mostra un messaggio di conferma
+    alert("Modulo inviato con successo! Grazie per il tuo acquisto.");
+});
