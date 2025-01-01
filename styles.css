@@ -323,3 +323,11 @@ footer p {
     display: flex;
     align-items: center; /* Allinea verticalmente il contenuto */
 }
+/* Dimensioni specifiche per i disegni nella pagina Comisioni */
+.comisioni img {
+    width: 100%; /* Riempie lo spazio disponibile */
+    max-width: 300px; /* Dimensione massima (puoi modificarla) */
+    height: auto; /* Mantiene le proporzioni */
+    border-radius: 8px; /* Optional: Angoli arrotondati */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Effetto ombra */
+}
