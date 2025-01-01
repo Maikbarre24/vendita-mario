@@ -77,9 +77,18 @@ h1, h2 {
     border-radius: 8px;
     border: 2px solid #ddd;
 }
+/* Stile per la Home, Galleria e Anime Girls (1 disegno per riga) */
+#home .category-images,
+.galeria .category-images,
+.anime-girls .category-images {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* 1 colonna */
+    gap: 20px;
+    justify-items: center;
+}
 
 /* Media query per dispositivi mobili */
-@media (max-width: 750px) {
+@media (max-width: 768px) {
     .category-images,
     .gallery-grid {
         grid-template-columns: repeat(1, 1fr); /* 1 colonna su schermi piccoli */
