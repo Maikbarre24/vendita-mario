@@ -338,3 +338,86 @@ footer p {
     justify-content: center; /* Centra le immagini orizzontalmente */
     padding: 20px; /* Spaziatura interna */
 }
+
+/* Stili generali per tutto il sito */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+/* Stili solo per la pagina di acquisto */
+.acquisto-pagina {
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+/* Modulo di acquisto moderno */
+.acquisto-pagina form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Input moderni */
+.acquisto-pagina input, .acquisto-pagina select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Bottone moderno */
+.acquisto-pagina button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.acquisto-pagina button:hover {
+    background-color: #0056b3;
+}
+
+/* Media query per schermi piccoli (solo per la pagina di acquisto) */
+@media (max-width: 768px) {
+    .acquisto-pagina .categories {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .acquisto-pagina .category {
+        margin: 15px 0;
+    }
+
+    .acquisto-pagina .category img {
+        max-width: 120px;
+    }
+}
+
+/* Media query per schermi molto piccoli (solo per la pagina di acquisto) */
+@media (max-width: 480px) {
+    .acquisto-pagina .category img {
+        max-width: 100px;
+    }
+
+    .acquisto-pagina .category h2 {
+        font-size: 1.2em;
+    }
+
+    .acquisto-pagina .category p {
+        font-size: 0.9em;
+    }
+}
