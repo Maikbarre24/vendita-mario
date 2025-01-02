@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informazioni</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f9f9f9;
+            color: #000000;
+        }
+
+        header {
+            background: linear-gradient(90deg, #000000, #ffcc00);
+            padding: 20px 30px;
+            text-align: center;
+            color: #ffffff;
+            animation: slideDown 1s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .horizontal-video {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .video-description {
+            font-size: 1.2em;
+            text-align: center;
+            padding: 20px;
+            background: #fff;
+            margin: 20px auto;
+            max-width: 800px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 1s ease-out forwards;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: #fff;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Informazioni</h1>
+    </header>
+
+    <!-- Video con riproduzione automatica -->
+    <video autoplay loop muted class="horizontal-video">
+        <source src="videos/mari.mp4" type="video/mp4">
+        Il tuo browser non supporta il tag video.
+    </video>
+  
+    <!-- Testo descrittivo sotto il video -->
+    <p class="video-description">
+        Questo è un video che mostra che i nostri disegni non sono fotocopie, bensì disegni realizzati a mano.
+        I nostri disegni sono realizzati con promarker brush, promarker normali, pastelli e colori indelebili per i dettagli.
+        I prezzi variano in base alla grandezza e al tempo di lavorazione. Inoltre, la maggior parte dei nostri disegni 
+        sono pezzi unici. I prezzi delle commissioni variano a seconda del tempo, della grandezza e delle eventuali cornici.
+    </p>
+
+    <footer>
+        &copy; 2025 Disegni Unici. Tutti i diritti riservati.
+    </footer>
+</body>
+</html>

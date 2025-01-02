@@ -1,0 +1,301 @@
+/* Modern CSS with Vertical Categories and Carousel */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+    background-color: #111;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+
+/* Hero Section with Carousel */
+#home {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-images img {
+    width: 100%;
+    max-width: 100%;
+}
+
+.carousel-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.carousel-buttons button {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.carousel-buttons button:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Categories Section */
+.categories {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.category {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.category:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.category img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.category h3 {
+    font-size: 1.5rem;
+    margin: 0 0 10px;
+}
+
+.category p {
+    font-size: 1rem;
+    color: #666;
+    margin: 0;
+}
+
+.category .button {
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.category .button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .categories {
+        gap: 15px;
+    }
+
+    .category {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .category img {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .category h3 {
+        font-size: 1.2rem;
+    }
+
+    .category p {
+        font-size: 0.9rem;
+    }
+}
+a {
+    color: white; /* Colore bianco per i link */
+    text-decoration: none; /* Rimuove la sottolineatura (opzionale) */
+}
+
+a:visited {
+    color: white; /* Colore bianco anche per i link visitati */
+}
+
+a:hover {
+    color: #ff6347; /* Colore a tua scelta quando passi il mouse sopra */
+    text-decoration: underline; /* Opzionale per effetto visivo */
+}
+.artwork a {
+    color: white;
+    text-decoration: none;
+}
+
+.artwork a:visited {
+    color: white;
+}
+
+.artwork a:hover {
+    color: #ff6347;
+    text-decoration: underline;
+}
+
+/* ANIMAZIONI */
+
+/* 1. Scivola verso il basso */
+@keyframes slideDown {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* 2. Apparizione graduale con dissolvenza */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 3. Zoom-in con rimbalzo */
+@keyframes popIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* 4. Elemento che scorre da sinistra a destra */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* 5. Rotazione graduale */
+@keyframes rotateIn {
+    from {
+        transform: rotate(-180deg);
+        opacity: 0;
+    }
+    to {
+        transform: rotate(0);
+        opacity: 1;
+    }
+}
+
+/* STILI DI BASE PER ELEMENTI */
+
+/* Header che scivola dall'alto */
+header {
+    transform: translateY(-100px);
+    opacity: 0;
+    animation: slideDown 1s ease-out forwards;
+}
+
+/* Sezione eroe con dissolvenza */
+.hero {
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: fadeIn 1.5s ease-out forwards;
+}
+
+/* Prodotti che appaiono con zoom */
+.product {
+    opacity: 0;
+    transform: scale(0.9);
+    animation: popIn 1.2s ease-out forwards;
+}
+
+/* Immagini dei prodotti con dissolvenza */
+.product img {
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards;
+}
+
+/* Elemento che scorre da sinistra */
+.example-slide-in {
+    transform: translateX(-100%);
+    opacity: 0;
+    animation: slideInLeft 1s ease-out forwards;
+}
+
+/* Elemento con rotazione */
+.example-rotate-in {
+    transform: rotate(-180deg);
+    opacity: 0;
+    animation: rotateIn 1s ease-out forwards;
+}
