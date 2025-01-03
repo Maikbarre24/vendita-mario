@@ -36,7 +36,7 @@
 </head>
 <body>
     <h1>Modulo di Acquisto</h1>
-    <form action="https://formspree.io/f/mpwwozgw" method="POST">
+    <form id="purchaseForm" action="https://formspree.io/f/mpwwozgw" method="POST">
         <label for="name">Nome:</label>
         <input type="text" id="name" name="name" required>
 
@@ -64,7 +64,41 @@
             <option value="PayPal">PayPal</option>
         </select>
 
-        <button type="submit">Invia</button>
+        <button type="button" id="submitButton">Invia</button>
     </form>
+
+    <script>
+        document.getElementById('submitButton').addEventListener('click', function() {
+            const paymentMethod = document.getElementById('payment_method').value;
+            const form = document.getElementById('purchaseForm');
+
+            if (paymentMethod === 'PayPal') {
+                // Prepara i dati del modulo
+                const formData = new FormData(form);
+
+                // Invia i dati a Formspree
+                fetch(form.action, {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json'
+                    },
+                    body: formData
+                }).then(response => {
+                    if (response.ok) {
+                        // Reindirizza al tuo profilo PayPal
+                        window.location.href = 'https://paypal.me/MaikBarre'; // Sostituisci con il tuo link PayPal.Me
+                    } else {
+                        alert('Errore durante l\'invio del modulo. Riprova.');
+                    }
+                }).catch(error => {
+                    console.error('Errore:', error);
+                    alert('Errore durante l\'invio del modulo. Riprova.');
+                });
+            } else {
+                // Invia il modulo normalmente
+                form.submit();
+            }
+        });
+    </script>
 </body>
 </html>
