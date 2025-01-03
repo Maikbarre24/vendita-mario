@@ -36,7 +36,7 @@
 </head>
 <body>
     <h1>Modulo di Acquisto</h1>
-    <form id="purchaseForm" action="https://formspree.io/f/mpwwozgw" method="POST">
+    <form id="purchaseForm" action="https://formspree.io/f/mqaagkon" method="POST">
         <label for="name">Nome:</label>
         <input type="text" id="name" name="name" required>
 
@@ -50,13 +50,13 @@
         </select>
 
         <label for="address">Indirizzo:</label>
-        <input type="text" id="address" name="address" required>
+        <input type="text" id="address" name="address">
 
         <label for="zip">CAP:</label>
-        <input type="text" id="zip" name="zip" required>
+        <input type="text" id="zip" name="zip">
 
         <label for="country">Paese:</label>
-        <input type="text" id="country" name="country" required>
+        <input type="text" id="country" name="country">
 
         <label for="payment_method">Metodo di Pagamento:</label>
         <select id="payment_method" name="payment_method" required>
@@ -64,39 +64,28 @@
             <option value="PayPal">PayPal</option>
         </select>
 
-        <button type="button" id="submitButton">Invia</button>
+        <input type="hidden" id="item_name" name="item_name" value="Disegno di albedo di Overlord">
+        <input type="hidden" id="amount" name="amount" value="50.00">
+        <input type="hidden" id="currency_code" name="currency_code" value="EUR">
+
+        <button type="submit" id="submitButton">Invia</button>
     </form>
 
     <script>
-        document.getElementById('submitButton').addEventListener('click', function() {
+        document.getElementById('purchaseForm').addEventListener('submit', function(event) {
             const paymentMethod = document.getElementById('payment_method').value;
-            const form = document.getElementById('purchaseForm');
 
             if (paymentMethod === 'PayPal') {
-                // Prepara i dati del modulo
-                const formData = new FormData(form);
+                event.preventDefault(); // Impedisce l'invio del modulo a Formspree
 
-                // Invia i dati a Formspree
-                fetch(form.action, {
-                    method: 'POST',
-                    headers: {
-                        'Accept': 'application/json'
-                    },
-                    body: formData
-                }).then(response => {
-                    if (response.ok) {
-                        // Reindirizza al tuo profilo PayPal
-                        window.location.href = 'https://paypal.me/MaikBarre'; // Sostituisci con il tuo link PayPal.Me
-                    } else {
-                        alert('Errore durante l\'invio del modulo. Riprova.');
-                    }
-                }).catch(error => {
-                    console.error('Errore:', error);
-                    alert('Errore durante l\'invio del modulo. Riprova.');
-                });
-            } else {
-                // Invia il modulo normalmente
-                form.submit();
+                const business = "maikbarre3000@gmail.com";
+                const itemName = document.getElementById('item_name').value;
+                const amount = document.getElementById('amount').value;
+                const currencyCode = document.getElementById('currency_code').value;
+
+                // Redirige a PayPal
+                const paypalUrl = `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=${encodeURIComponent(business)}&item_name=${encodeURIComponent(itemName)}&amount=${encodeURIComponent(amount)}&currency_code=${encodeURIComponent(currencyCode)}`;
+                window.location.href = paypalUrl;
             }
         });
     </script>
