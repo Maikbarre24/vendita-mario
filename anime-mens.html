@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Mens</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f9f9f9;
+        }
+
+        header {
+            background: linear-gradient(90deg, #000000, #95ff00);
+            padding: 20px 30px;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        header nav ul li {
+            margin-right: 20px;
+        }
+
+        header nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 400;
+        }
+
+        .category-detail {
+            text-align: center;
+            padding: 50px 20px;
+            background: #000000;
+            color: #fff;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .category-detail p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            animation: slideIn 1.5s ease-in-out;
+        }
+
+        .category-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 30px;
+        }
+
+        .artwork {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: scaleUp 2s ease-in-out;
+        }
+
+        .artwork img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            animation: floatIn 2s ease-in-out;
+        }
+
+        .artwork h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            animation: slideInFromLeft 1.5s ease-in-out;
+        }
+
+        .artwork p {
+            font-size: 1em;
+            color: #333;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .artwork:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #00ff2a;
+            color: #000000;
+            font-size: 0.9em;
+        }
+
+        .artwork a {
+            text-decoration: none;
+            color: #fff;
+            background: #ff0101;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+        }
+        /* Animazioni */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleUp {
+            0% {
+                transform: scale(0.8);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes floatIn {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInFromLeft {
+            0% {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="galleria.html">Galleria</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="category-detail">
+        <p>Questa categoria raccoglie tutti i disegni anime men</p>
+
+        <div class="category-images">
+            <div class="artwork">
+                <img src="images/disegno2.jpg" alt="Disegno di gohan ssj2">
+                <h3>Disegno di gohan ssj2</h3>
+                <p>€50.00</p>
+                <a href="acquisto.html">acquista</a>
+            </div>
+            <div class="artwork">
+                <img src="images/lp.jpeg" alt="Disegno di sung jin woo">
+                <h3>Disegno di sung jin woo</h3>
+                <p>€50.00</p>
+                <a href="acquisto.html">acquista</a>
+            </div>
+
+            <div class="artwork">
+                <img src="images/mk.jpg" alt="Disegno di saturo gojo jujustu kaisen">
+                <h3>Disegno di saturo gojo jujustu kaisen</h3>
+                <p>€40.00</p>
+                <a href="acquisto.html">acquista</a>
+            </div>
+
+            <div class="artwork">
+                <img src="images/ya.jpeg" alt="Disegno di byakuya di bleach">
+                <h3>Disegno di byakuya di bleach</h3>
+                <p>€25.00</p>
+                <a href="acquisto.html">acquista</a>
+            </div>
+
+            <div class="artwork">
+                <img src="images/tutti.jpg" alt="Disegno di haruka sakura di wind breaker">
+                <h3>Disegno di haruka sakura di wind breaker</h3>
+                <p>€25.00</p>
+                <a href="acquisto.html">acquista</a>
+            </div>
+
+            <div class="artwork">
+                <img src="images/o.jpg" alt="Disegno di asta di black clover">
+                <h3>Disegno di asta di black clover</h3>
+                <p>€25.00</p>
+                <a href="acquisto.html">acquista</a>
+            </div>
+
+            <div class="artwork">
+                <img src="images/p.jpg" alt="Disegno di roronoa zoro di one piece">
+                <h3>Disegno di roronoa zoro di one piece</h3>
+                <p>€40.00</p>
+                <a href="acquisto.html">acquista</a>
+            </div>
+
+            <div class="artwork">
+                <img src="images/d.jpg" alt="Disegno di douma di demon sleyer">
+                <h3>Disegno di douma di demon sleyer</h3>
+                <p>€40.00</p>
+                <a href="acquisto.html">acquista</a>
+            </div>
+
+            <div class="artwork">
+                <img src="images/s.jpg" alt="Disegno di sukuna">
+                <h3>Disegno di sukuna</h3>
+                <p>€50.00</p>
+                <a href="acquisto.html">acquista</a>
+            </div>
+
+            <div class="artwork">
+                <img src="images/h.jpg" alt="Disegno di choso di jujustu kaisen">
+                <h3>Disegno di choso di jujustu kaisen</h3>
+                <p>€55.00</p>
+                <a href="acquisto.html">acquista</a>
+            </div>
+
+            <div class="artwork">
+                <img src="images/m.jpg" alt="Disegno di sebastian di black butler">
+                <h3>Disegno di sebastian di black butler</h3>
+                <p>€45.00</p>
+                <a href="acquisto.html">acquista</a>
+            </div>
+
+            <div class="artwork">
+                <img src="images/c.jpg" alt="Disegno di itachi di narruto">
+                <h3>Disegno di itachi di narruto</h3>
+                <p>€60.00</p>
+                <a href="acquisto.html">acquista</a>
+            </div>
+
+            <div class="artwork">
+                <img src="images/w.jpg" alt="Disegno di ayanocoji kiotaka di classroom off the elite">
+                <h3>Disegno di ayanocoji kiotaka di classroom off the elite</h3>
+                <p>€55.00</p>
+                <a href="acquisto.html">acquista</a>
+            </div>
+
+            <div class="artwork">
+                <img src="images/x.jpg" alt="Disegno di ayanokoji">
+                <h3>Disegno di ayanokoji</h3>
+                <p>€50.00</p>
+                <a href="acquisto.html">acquista</a>
+            </div>
+
+            <div class="artwork">
+                <img src="images/1.jpeg" alt="Disegno di hayato suo di wind braker">
+                <h3>Disegno di hayato suo di wind braker</h3>
+                <p>€35.00</p>
+                <a href="acquisto.html">acquista</a>
+            </div>
+
+            <div class="artwork">
+                <img src="images/disegno5.jpg" alt="Disegno di Ken Takakura di dandadan">
+                <h3>Disegno di Ken Takakura di dandadan</h3>
+                <p>€50.00</p>
+                <a href="acquisto.html">acquista</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 Anime Mens. All rights reserved.
+    </footer>
+</body>
+</html>
