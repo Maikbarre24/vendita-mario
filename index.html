@@ -48,12 +48,43 @@
         .hero {
             text-align: center;
             padding: 200px 20px; /* Modificato per ridurre l'altezza in mobile e su desktop */
-            background: url('images/mk.jpeg') no-repeat center center/cover;
-            color: #fff;
-            opacity: 0;
-            transform: translateY(-100px);
-            animation: fadeIn 1.5s ease-out forwards;
             position: relative;
+            color: #fff;
+        }
+
+        .hero h1, .hero p {
+        position: relative;
+        z-index: 2;
+        animation: bounce 3s infinite;
+    }
+
+    @keyframes bounce {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-20px);
+        }
+    }
+
+    .animated-title {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+    }
+
+    .animated-subtitle {
+        font-size: 1.2em;
+        margin-bottom: 30px;
+    }
+
+        .hero video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
         }
 
         .hero::before {
@@ -218,6 +249,10 @@
     </header>
 
     <section class="hero">
+        <video autoplay muted loop>
+            <source src="videos/pay.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
         <h1>Welcome to Marioart</h1>
         <p>Esplorate un mondo pieno di personaggi anime</p>
     </section>
@@ -255,4 +290,4 @@
         });
     </script>
 </body>
-</html>
+</html>      
